@@ -1,0 +1,69 @@
+<div id="block-user" class="top">
+    <div>
+        <div class="container p-2">
+            <div class="py-4 text-center top">
+                <h2 style="color: black;">Admin User Block/Unblock</h2>
+            </div>
+        </div>
+        <div *ngIf="showub">
+        <button name="Block" class="btn btn-danger btn-lg" (click)="Toggle()">See Blocked Users</button>
+        <div class="container p-3">
+            <div class="modal-body">
+                <table class="table table-striped table-bordered" style="color:black;">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Contact Number</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let items of UserDataBlock">
+                            <td>{{items.id}}</td>
+                            <td>{{items.firstName}} {{items.lastName}}</td>
+                            <td>{{items.email}}</td>
+                            <td>{{items.contactNumber}}</td>
+                            <td>
+                                    <button class=" btn  btn-block btn-danger" (click)="block(items.id)">Block</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+        <div *ngIf="!showub">
+                <button name="Block" class="btn btn-danger btn-lg" (click)="Toggle()">See UnBlocked Users</button>
+                <div class="container p-3">
+                    <div class="modal-body">
+                        <table class="table table-striped table-bordered" style="color:black;">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Contact Number</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let items of UserDataUnblock">
+                                    <td>{{items.id}}</td>
+                                    <td>{{items.firstName}} {{items.lastName}}</td>
+                                    <td>{{items.email}}</td>
+                                    <td>{{items.contactNumber}}</td>
+                                    <td>
+                                            <button class=" btn  btn-block btn-primary" (click)="unblock(items.id)">Unblock</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                </div>
+    </div>
+</div>

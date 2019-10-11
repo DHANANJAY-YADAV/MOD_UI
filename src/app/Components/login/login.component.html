@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row">
+    <div class="card col-md-4">
+    <h5 class="card-header text-center">WebGuru: Mentor Registration</h5>
+    <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-row">
+                        <div class="form-group col">
+                                <label>Username</label>
+                                <input type="text" placeholder="Enter Email"  formControlName="email" class="form-control" [ngClass]="{ 'is-invalid':(submitted || f.email.touched || f.email.dirty) && f.email.errors }"  email required/>
+                                    <div *ngIf="f.email.invalid && (submitted || f.email.touched || f.email.dirty) && f.email.errors.required" class="invalid-feedback">Username is required</div>
+                                    <div *ngIf="f.email.invalid && (submitted || f.email.touched || f.email.dirty) && f.email.errors.pattern" class="invalid-feedback">Username must be a valid email address</div>
+                        </div>
+                </div>
+                <div class="form-row">
+                        <div class="form-group col">
+                                <label>Password</label>
+                                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': (submitted || f.password.touched || f.password.dirty)  && f.password.errors }"  required/>
+                                    <div *ngIf="f.password.invalid && (submitted || f.password.touched || f.password.dirty)  && f.password.errors.required" class="invalid-feedback">Password is required</div>
+                            </div>
+                </div>
+                <div class="text-center">
+                        <button class="btn btn-primary mr-1" name = "Register" type="submit">Login</button>
+                        <button class="btn btn-secondary" type="reset" name="Cancel" (click)="onReset()">Cancel</button>
+                    </div>
+                </form>
+                <small class="text-center" style="padding-top: 10px;">Don't have an account? Click here to <a style="color:#199EB8" [routerLink]="['/registration']">Sign up </a> </small>
+        </div>
+        </div>
+        </div>
+        </div>
+<app-footer></app-footer>
+

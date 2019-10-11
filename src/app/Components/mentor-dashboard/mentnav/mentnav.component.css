@@ -1,0 +1,94 @@
+.navbar-brand {
+    float: left;
+    height: 30px;
+    padding: 15px 15px;
+    font-size: 30px;
+    line-height: 10px;
+  }
+  a.navbar-brand span {
+      color:#fff;
+      font-size:35px;	
+  }
+  
+  .navbar-collapse {
+      float:right;
+      padding-right: 15px;
+      padding-left: 15px;
+      overflow-x: visible;
+      -webkit-overflow-scrolling: touch;
+      border-top: 0;
+      
+  }
+  .fixed-top {
+    top: 0;
+    border-width: 0 0 0;
+    background-color:#0db4be;
+  }
+  .nav-tabs {
+    border-bottom:0; 
+  }
+  .nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 25px;
+    border: 0;
+  
+  }
+  .nav-tabs > li > a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 0;
+    border-radius: 0 0 0 0;
+    text-transform:uppercase;
+    font-weight:600;
+    color:#fff;
+  }
+  .nav-tabs > li > a:hover {
+      background-color: #36CBD4;
+      border: 0;
+  }
+  .nav-tabs > li.active > a {
+      color: #fff;
+    cursor: default;
+    background-color:#36CBD4;
+    border: 0;
+    border-bottom-color: transparent;
+  
+  }
+  .nav-tabs > li.active > a:hover {
+      color: #fff;
+      border: 0;
+      background-color: #36CBD4;
+      cursor: pointer;
+  }
+  
+  .nav-tabs > li {
+      margin-bottom: 0;
+      margin-right:20px;
+      border:0;
+  }
+  .navbar .dropdown.show a{ 
+      color: #fff;
+      border: 0;
+      background-color: #36CBD4;
+      cursor: pointer;
+    }
+    .navbar .dropdown.show li a{ 
+      color: #36CBD4;
+      border: 0;
+      background:transparent;
+      cursor: pointer;
+      margin-right: 2px;
+    line-height: 1.42857143;
+    border: 0;
+    border-radius: 0 0 0 0;
+    text-transform:uppercase;
+    font-weight:300;
+    }
+  
+    .navbar .dropdown.show li a:hover { 
+      color: #fff;
+      border: 0;
+      background-color: #36CBD4;
+      cursor: pointer;
+    }

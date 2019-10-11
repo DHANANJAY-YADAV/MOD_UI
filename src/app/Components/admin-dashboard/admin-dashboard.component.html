@@ -1,0 +1,41 @@
+<app-adminnav></app-adminnav>
+<div class="max">
+<div class=" cc container-fluid" style="padding: 0px;">
+     <h1>WelCome</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <button class="navbar-toggle navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            More<span class="navbar-toggler-icon icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="nav navbar-nav nav-pills nav-justified w-100">
+          
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['payments'] " [routerLinkActive]="['active']">Payments</a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['add-remove-technologies']" [routerLinkActive]="['active']">Add/Remove Technolgy</a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['block-user']" [routerLinkActive]="['active']"> Block User</a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['block-mentor']" [routerLinkActive]="['active']"> Block Mentor</a>
+              </li>
+        </ul>
+    </div>
+</nav>
+   
+
+</div>
+<div class="container-fluid" style="height:89%;width: 100%;background-color: white;">
+        <router-outlet></router-outlet>
+</div>
+</div>
+<app-footer></app-footer>
+    
+    
+    
+    
+    
+        
+        

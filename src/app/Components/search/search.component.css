@@ -1,0 +1,17 @@
+button[name="search"] {
+    padding:8px 20px;
+      font-size:25px;
+      background:#199EB8;
+      color:#fff;
+    border-color: #199EB8;;
+    margin-right: 20px;
+  }
+  
+ button[name="search"]:hover {
+      background:#fff;
+      color:#199EB8;;
+      -webkit-transition: color 300ms, background-color 300ms;
+    -moz-transition: color 300ms, background-color 300ms;
+    -o-transition:  color 300ms, background-color 300ms;
+    transition:  color 300ms, background-color 300ms;
+  }

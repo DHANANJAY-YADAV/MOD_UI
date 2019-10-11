@@ -1,0 +1,31 @@
+<div class="row" style="padding-top: 50px;">
+    <div class="col-md-6">
+        <div class="card bg-light top" >
+            <div class="card-header bg-success"  style="color:white;">Approved Request</div>
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <div *ngFor="let items of acceptedTraining">
+                    <p>Request from {{items.userName}} for {{items.skillname}} 
+                    will start from {{items.startDate}}.</p>
+                    <br>
+                </div>
+            </div>   
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card bg-light top" >
+            <div class="card-header bg-primary"  style="color:white;">Pending Request</div>
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <div *ngFor="let items of pendingTraining" style="border: 1px solid grey;padding: 10px;margin: 0px;border-radius: 5px;">
+                    <p>Request from {{items.userName}} for {{items.skillname}} 
+                    is pending.</p>
+                    <div>
+                        <button class="col-md-4 btn  btn-block btn-info" style="float: left;margin-right: 20px;" (click)="onAccept(items.id)">Accept</button>
+                        <button class="col-md-4 btn  btn-block btn-danger" (click)="onReject(items.id)">Reject</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

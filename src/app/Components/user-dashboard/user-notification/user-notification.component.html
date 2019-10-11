@@ -1,0 +1,57 @@
+<div class="row top" style="padding-top: 50px;">
+    <div class="col-md-4">
+        <div class="card bg-light " >
+            <div class="card-header bg-success"  style="color:white;">Approved Request</div>
+            <div class="card-body top">
+                <h5 class="card-title"></h5>
+                <div *ngFor="let items of paymentDone" >
+                    <div *ngIf="items.progress == null" style="border: 1px solid grey;padding: 10px;margin: 0px;border-radius: 5px;margin-bottom: 10px;">
+                        <p>Your training on {{items.skillname}} by {{items.mentorName}} will start at {{items.startDate | date : 'dd/MM/yyyy'}}.</p>
+                        <div>
+                            <button class=" btn btn-primary btn-sm btn-block "  (click)="startTraining(items.id)">Start Training</button>
+                        </div>
+                    </div>
+                </div>
+                <div *ngFor="let items of paymentNotDone" style="border: 1px solid grey;padding: 10px;margin: 0px;border-radius: 5px;margin-bottom: 10px;">
+                    <p>Request to {{items.mentorName}} for {{items.skillname}} 
+                    is accepted.</p>
+                    <div>
+                        <button class=" btn  btn-primary btn-block "  (click)="payement(items.id)">Complete your Payment</button>
+                    </div>
+                    
+                </div>
+            </div>   
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-light ">
+            <div class="card-header bg-primary"  style="color:white;">Pending Request</div>
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <div *ngFor="let items of pendingTraining">
+                    <p>Your request to {{items.mentorName}} for {{items.skillname}} 
+                    is pending.</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-light " >
+            <div class="card-header bg-danger" style="color:white;">Rejected Request</div>
+            <div class="card-body">
+                <div *ngFor="let items of rejectedTraining">
+                    <p>Your request to {{items.mentorName}} for {{items.skillname}} 
+                    is rejected.</p>
+                    <br>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+
+
+</div>

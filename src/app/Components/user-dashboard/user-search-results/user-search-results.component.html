@@ -1,0 +1,39 @@
+<div id="searchTrainings" >
+    <div style="width: 50%;margin-left: auto;margin-right: auto;margin-top: 5%;" class="top">
+        <form [formGroup]="Search" (submit)="onSubmit(Search)">
+            <div class="row">
+                <div class="col md-9">
+                    <select formControlName="technology" class="rounded dropdown form-control " >
+                        <option  value="" disabled>Select technology</option>
+                        <option value="{{items.name}}" *ngFor="let items of skillData">{{items.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-3" style="text-align: center;">
+                    <button class="btn btn-primary" style="width: 100%;"><span class="glyphicon glyphicon-search"></span> Search </button>
+                </div>
+                
+            </div>
+        </form> 
+    </div>
+    <div style="width: 80%;margin-left: auto;margin-right: auto;">
+        <h3 class="text-center text-capitalize p-4" style="color: black;">Search Results</h3>
+        <table class="table table-bordered table-striped" style="color: black;">
+            <tbody id="myTable">
+                <tr>
+                    <th></th>
+                    <th>Name of Mentor</th>
+                    <th>Expertise</th>
+                    <th>Year of Experience</th>
+                    <th>Propose Training</th>
+                </tr>
+                <tr *ngFor="let items of Trainerdetails">
+                    <td><img src="assets/images/team1.jpg" width="60px" height="60px" style="margin-top:3px;margin-left: 5px;"></td>
+                    <td>{{items.firstName}} {{items.lastName}}</td>
+                    <td>{{items.training}}</td>
+                    <td>{{items.yearOfExperience}}</td>
+                    <td><button type="button" class="btn  btn-default" style="color:rgb(105, 161, 199);" (click)="onPropose(items.id)">Propose Training</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

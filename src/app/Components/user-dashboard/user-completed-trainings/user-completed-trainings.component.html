@@ -1,0 +1,25 @@
+<div id="completedTrainings">
+    <h3 class="text-center text-capitalize p-4 top" style="color: black;">Completed Trainings </h3>
+    <table class="table table-striped table-bordered" style="color:black;">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Course</th>
+            <th>Trainer Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Progress</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let items of completedTraining">
+                <td>{{items.id}}</td>
+                <td>{{items.skillname}}</td>
+                <td>{{items.mentorName}}</td>
+                <td>{{items.endDate | date : 'dd/MM/yyyy'}}</td>
+                <td>{{items.startDate | date : 'dd/MM/yyyy'}}</td>
+                <td>{{items.progress}}</td>
+            </tr>
+        </tbody> 
+    </table>
+</div>

@@ -1,0 +1,92 @@
+.container-fluid
+{
+    background: linear-gradient(to right bottom,#fff,rgb(188, 231, 240),#fff);
+    height:100vh;
+}
+
+.card{
+    position: relative;
+    margin-top: 20vh;
+    width:45%;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:18px;
+    font-weight: 300;
+    box-shadow: 2px 2px 2px grey;   
+}
+
+.text-center
+{
+  text-align:center;
+}
+.card-header
+{
+    background-color:#199EB8;
+    color: #fff;
+    font-weight: 500;
+    padding:15px;
+    font-size:24px;
+    height:auto;
+    font-size:24px;
+    margin-left:-15px;
+    margin-right:-15px;
+}
+
+
+ button[name="Register"] {
+    padding:8px 20px;
+      font-size:25px;
+      background:#199EB8;
+      color:#fff;
+    border-color: #199EB8;;
+  }
+  
+ button[name="Register"]:hover {
+      background:#fff;
+      color:#199EB8;;
+      -webkit-transition: color 300ms, background-color 300ms;
+    -moz-transition: color 300ms, background-color 300ms;
+    -o-transition:  color 300ms, background-color 300ms;
+    transition:  color 300ms, background-color 300ms;
+
+  }
+  
+ button[name="Cancel"] {
+      padding:8px 20px;
+      font-size:25px;
+      background:#fff;
+      color:#199EB8;;
+      border-color: #199EB8;
+  }
+  
+ button[name="Cancel"]:hover {
+      background:#199EB8;;
+      color:#fff;
+      -webkit-transition: color 300ms, background-color 300ms;
+    -moz-transition: color 300ms, background-color 300ms;
+    -o-transition:  color 300ms, background-color 300ms;
+    transition:  color 300ms, background-color 300ms;
+  }
+
+  @media(max-width:575px)
+  {
+    .card{
+      width:100%;
+    }
+    button[name="Register"] {
+        padding:4px 10px;
+          font-size:25px;
+          background:#199EB8;
+          color:#fff;
+        border-color: #199EB8;;
+        margin-right: 20px;
+      }
+
+      button[name="Cancel"] {
+        padding:4px 10px;
+        font-size:25px;
+        background:#fff;
+        color:#199EB8;;
+        border-color: #199EB8;
+    }
+  }

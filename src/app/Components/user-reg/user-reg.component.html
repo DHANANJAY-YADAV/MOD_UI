@@ -1,0 +1,85 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row">
+    <div class="card col-md-4">
+    <h5 class="card-header text-center">WebGuru: Mentor Registration</h5>
+    <div class="card-body">
+            <form [formGroup]="MentorRegister" autocomplete="off" (submit)="onSubmit(MentorRegister)">
+					<div class="form-row">
+						<div class="form-group col required">
+							<label>First Name</label>
+							<input class="form-control" formControlName="firstName">
+							<small class="text-danger" *ngIf="MentorRegister.get('firstName').touched && MentorRegister.get('firstName').errors?.required">FIrst name is mandatory</small>
+							<small class="text-danger" *ngIf="MentorRegister.get('firstName').touched && MentorRegister.get('firstName').errors?.pattern">Name cannot have special characters or digits</small>
+						</div>
+						<div class="form-group col required">
+							<label>Last Name</label>
+							<input class="form-control" formControlName="lastName">
+							<small class="text-danger" *ngIf="MentorRegister.get('lastName').touched && MentorRegister.get('lastName').errors?.required">last Name is mandatory</small>
+							<small class="text-danger" *ngIf="MentorRegister.get('lastName').touched && MentorRegister.get('lastName').errors?.pattern">Name cannot have special characters or digits</small>
+						</div>
+					</div>
+					<div class="form-group required">
+						<label>UserName</label>
+						<input class="form-control" formControlName="userName">
+						<small class="text-danger" *ngIf="MentorRegister.get('userName').touched && MentorRegister.get('userName').errors?.required">Name is mandatory</small>
+						<small class="text-danger" *ngIf="MentorRegister.get('userName').touched && MentorRegister.get('userName').errors?.pattern">Name cannot have special characters or digits</small>
+					</div>
+					<div class="form-group required">
+						<label>Email</label>
+						<input class="form-control" formControlName="email">
+						<small class="text-danger" *ngIf="MentorRegister.get('email').touched && MentorRegister.get('email').errors?.required">Email is mandatory</small>
+						<small class="text-danger" *ngIf="MentorRegister.get('email').touched && MentorRegister.get('email').errors?.pattern">Invalid Email Address</small>
+					</div>
+					<div class="form-group required">
+						<label>Phone Number</label>
+						<input class="form-control" formControlName="contactNumber">
+						<small class="text-danger" *ngIf="MentorRegister.get('contactNumber').touched && MentorRegister.get('contactNumber').errors?.required">Phone number is mandatory</small>
+						<small class="text-danger" *ngIf="MentorRegister.get('contactNumber').touched && MentorRegister.get('contactNumber').errors?.pattern">Invalid Phone Number</small>
+					</div>
+					<div class="form-group required">
+						<label>LinkedIn URL</label>
+						<input class="form-control" formControlName="linkdinUrl">
+						<small class="text-danger" *ngIf="MentorRegister.get('linkdinUrl').touched && MentorRegister.get('linkdinUrl').errors?.required">LinkedIn Url is mandatory</small>
+						<small class="text-danger" *ngIf="MentorRegister.get('linkdinUrl').touched && MentorRegister.get('linkdinUrl').errors?.pattern">Invalid LinkedIn URL</small>
+					</div>
+					<div class="form-group required">
+						<label>Years of Experience</label>
+						<input class="form-control" formControlName="yearOfExperience">
+						<small class="text-danger" *ngIf="MentorRegister.get('yearOfExperience').touched && MentorRegister.get('yearOfExperience').errors?.required">Experience is mandatory</small>
+					</div>	
+					<div class="form-group required">
+						<label>Technology</label>
+						<select formControlName="technology" class="rounded dropdown form-control" >
+							<option  value="" disabled>Choose your technology</option>
+							<option value="{{items.name}}" *ngFor="let items of skillData">{{items.name}}</option>
+						</select>
+						<small class="text-danger" *ngIf="MentorRegister.get('technology').touched && MentorRegister.get('technology').errors?.required">Technology is mandatory</small>
+					</div>
+					<div class="form-group required">
+						<label>Enter Password</label>
+						<input type="password" class="form-control" formControlName="password">
+						<small class="text-danger" *ngIf="MentorRegister.get('password').touched && MentorRegister.get('password').errors?.required"> Password is mandatory</small>
+						<small class="text-danger" *ngIf="MentorRegister.get('password').touched && MentorRegister.get('password').errors?.minlength">Minimun 8 characters required</small>
+						</div>
+					<div class="form-group required">
+						<label>Confirm Password</label>
+						<input type="password" class="form-control" formControlName="confirmPassword">
+						<small class="text-danger" *ngIf="MentorRegister.get('confirmPassword').touched && MentorRegister.get('confirmPassword').errors?.required">Confirm Password is mandatory</small>
+						<small class="text-danger" *ngIf="MentorRegister.get('confirmPassword').touched && MentorRegister.get('confirmPassword').errors?.mustMatch">Confirm Password does not match</small>
+					</div>
+            <div class="form-row">
+                <div class="form-group col-md-12 ">
+                        <div class="text-center">
+                                <button class="btn btn-primary mr-1" name = "Register" type="submit" [disabled]="!MentorRegister.valid">Register</button>
+                                <button class="btn btn-secondary" type="reset" name="Cancel" (click)="onReset()">Cancel</button>
+                        </div>
+                </div>
+            </div>
+        </form>        
+        </div>
+        </div>
+        </div>
+        </div>
+<app-footer></app-footer>
+

@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row">
+    <div class="card col-md-4">
+    <h5 class="card-header text-center">WebGuru: Mentor Registration</h5>
+    <div class="card-body">
+        <form [formGroup]="UserRegister" autocomplete="off" (submit)="onSubmit(UserRegister)">
+            <div class="form-row">
+                <div class="form-group col required">
+                    <label>First Name</label>
+                    <input class="form-control" formControlName="firstName">
+                    <small class="text-danger" *ngIf="UserRegister.get('firstName').touched && UserRegister.get('firstName').errors?.required">First Name is mandatory</small>
+                    <small class="text-danger" *ngIf="UserRegister.get('firstName').touched && UserRegister.get('firstName').errors?.pattern">Name cannot have special characters or digits</small>
+                </div>
+                <div class="form-group col required">
+                    <label>Last Name</label>
+                    <input class="form-control" formControlName="lastName">
+                    <small class="text-danger" *ngIf="UserRegister.get('lastName').touched && UserRegister.get('lastName').errors?.required">LastName is mandatory</small>
+                    <small class="text-danger" *ngIf="UserRegister.get('lastName').touched && UserRegister.get('lastName').errors?.pattern">Name cannot have special characters or digits</small>
+                </div>
+            </div>
+            <div class="form-group required">
+                <label>UserName</label>
+                <input class="form-control" formControlName="userName">
+                <small class="text-danger" *ngIf="UserRegister.get('userName').touched && UserRegister.get('userName').errors?.required">UserName is mandatory</small>
+                <small class="text-danger" *ngIf="UserRegister.get('userName').touched && UserRegister.get('userName').errors?.pattern">Name cannot have special characters or digits</small>
+            </div>
+            <div class="form-group required">
+                <label>Email</label>
+                <input class="form-control" formControlName="email">
+                <small class="text-danger" *ngIf="UserRegister.get('email').touched && UserRegister.get('email').errors?.required">Email is mandatory</small>
+                <small class="text-danger" *ngIf="UserRegister.get('email').touched && UserRegister.get('email').errors?.pattern">Invalid Email Address</small>
+            </div>
+            <div class="form-group required">
+                <label>Phone Number</label>
+                <input class="form-control" formControlName="contactNumber">
+                <small class="text-danger" *ngIf="UserRegister.get('contactNumber').touched && UserRegister.get('contactNumber').errors?.required">Phone Number is mandatory</small>
+                <small class="text-danger" *ngIf="UserRegister.get('contactNumber').touched && UserRegister.get('contactNumber').errors?.pattern">Invalid Phone Number</small>
+            </div>
+            <div class="form-group required">
+                <label>Enter Password</label>
+                <input class="form-control" formControlName="password">
+                <small class="text-danger" *ngIf="UserRegister.get('password').touched && UserRegister.get('password').errors?.required">Password is mandatory</small>
+                <small class="text-danger" *ngIf="UserRegister.get('password').touched && UserRegister.get('password').errors?.minlength">Minimun 8 characters required</small>
+            </div>
+            <div class="form-group required">
+                <label>Confirm Password</label>
+                <input class="form-control" formControlName="confirmPassword">
+                <small class="text-danger" *ngIf="UserRegister.get('confirmPassword').touched && UserRegister.get('confirmPassword').errors?.required">Confirm Password is mandatory</small>
+                <small class="text-danger" *ngIf="UserRegister.get('confirmPassword').touched && UserRegister.get('confirmPassword').errors?.mustMatch">Confirm Password does not match</small>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group col-md-12 ">
+                        <div class="text-center">
+                                <button class="btn btn-primary mr-1" name = "Register" type="submit" [disabled]="!UserRegister.valid">Register</button>
+                                <button class="btn btn-secondary" type="reset" name="Cancel" (click)="onReset()">Cancel</button>
+                        </div>
+                </div>
+            </div>
+        </form>        
+        </div>
+        </div>
+        </div>
+        </div>
+<app-footer></app-footer>

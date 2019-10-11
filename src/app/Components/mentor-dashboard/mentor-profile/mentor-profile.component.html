@@ -1,0 +1,105 @@
+<div class="container-fluid">
+        <h3 class="text-center text-capitalize p-4 top">Profile </h3>
+        <div class="row" style="color: black;border: 1px solid black;">
+            <div class="col-sm-4 text-center">
+                <img class="img-thumbnail m-3" alt="NA" src="/assets/images/client.jpg" width="284" style="height: 300px;">
+    
+            </div>
+            <div class="col-sm-8">
+                <div class="modal-body">
+                    <table class="table table-striped  table-bordered" style="color:black;">
+                        <tbody>
+                            <tr>
+                                <th>First Name</th>
+                                <td>
+                                    <div *ngIf="!edit">
+                                        {{fname}}
+                                    </div>
+                                    <div *ngIf="edit">
+                                        <input type="text" [(ngModel)]="fname" name="fname"
+                                            style="height: 30px;margin: 0px;" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>
+                                    <div *ngIf="!edit">
+                                        {{lname}}
+                                    </div>
+                                    <div *ngIf="edit">
+                                        <input type="text" [(ngModel)]="lname" name="lname"
+                                            style="height: 30px;margin: 0px;" />
+                                    </div>
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <th>Email-id</th>
+                                <td>
+                                    <div *ngIf="!edit">
+                                        {{email}}
+                                    </div>
+                                    <div *ngIf="edit">
+                                        <input type="text" [(ngModel)]="email" [disabled]="true" name="email"
+                                            style="height: 30px;margin: 0px;" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Mobile Number</th>
+                                <td>
+                                    <div *ngIf="!edit">
+                                        {{phoneNumber}}
+                                    </div>
+                                    <div *ngIf="edit">
+                                        <input type="text" [(ngModel)]="phoneNumber" name="phoneNumber"
+                                            style="height: 30px;margin: 0px;" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>LinkedIn Url</th>
+                                <td>
+                                    <div *ngIf="!edit">
+                                        {{linkdinUrl1}}
+                                    </div>
+                                    <div *ngIf="edit">
+                                        <input type="text" [(ngModel)]="linkdinUrl1" name="linkdinUrl1"
+                                            style="height: 30px;margin: 0px;" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Year of Experience</th>
+                                <td>
+                                    <div *ngIf="!edit">
+                                        {{year1}}
+                                    </div>
+                                    <div *ngIf="edit">
+                                        <input type="text" [(ngModel)]="year1" name="year1" 
+                                            style="height: 30px;margin: 0px;" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col md 10">
+                    </div>
+                    <div class="col md 2" style="text-align: right;">
+                        <div *ngIf="!edit">
+                            <button type="button" class="btn btn-info btn-md m-4" (click)="editbutton()">Edit Profile
+                            </button>
+                        </div>
+                        <div *ngIf="edit">
+                            <button type="button" class="btn btn-info btn-md m-4" (click)="savebutton()">Save
+                                Details</button>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>

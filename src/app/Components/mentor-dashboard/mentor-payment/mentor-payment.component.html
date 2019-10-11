@@ -1,0 +1,37 @@
+<div id="payment top">
+        <div>
+            <div class="container p-2">
+    
+                <div class="py-4 text-center">
+                    <h2 style="color: black;">Payments</h2>
+                    
+                </div>
+    
+            </div>
+            <div class="container p-3">
+                <div class="modal-body">
+                    <table class="table table-striped table-bordered" style="color:black;">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Course</th>
+                                <th>Name</th>
+                                <th>Course Fees</th>
+                                <th>Commission</th>
+                            </tr>
+    
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let items of PaymentData ;let i=index">
+                                <td>{{i+1}}</td>
+                                <td>{{items.skillName}}</td>
+                                <td>{{items.mentorName}}</td>
+                                <td>{{items.amount}}</td>
+                                <td>{{items.commision}}</td> 
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

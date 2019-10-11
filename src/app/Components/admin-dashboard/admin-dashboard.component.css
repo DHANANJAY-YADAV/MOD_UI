@@ -1,0 +1,124 @@
+.max
+{
+  min-height: 100vh;;
+}
+.cc{
+    position: relative;
+    top:55px;
+    margin: 0;
+    height:20vh;
+    padding-top: 15px;
+    text-align:center;
+	width:auto;
+	font-family: "Exo", sans-serif;
+	color: #fff;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+nav{
+    top:10px;
+    bottom:10px;
+}
+
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+h1 {
+    font-weight: 300;
+    color:#fff;
+}
+
+
+a
+{
+    font-size:15 px;
+    border:1px solid #fff;
+    border-radius: 5px;
+}
+a:hover {
+    font-size:20 px;
+	text-decoration: none;
+	color: #ddd;
+}
+.navbar-collapse {
+    float:left;
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow-x: visible;
+    -webkit-overflow-scrolling: touch;
+    border-top: 0;
+    
+}
+
+.nav-pills > li > a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1 solid #fff;
+    border-radius: 10px;
+    text-transform:uppercase;
+    font-weight:600;
+    color:#fff;
+    font-size:15px;
+    margin-right: 3%;
+    margin-left: 3%;
+    margin-bottom:5px;
+  }
+  .nav-pills> li > a:hover {
+    background-color: #fff;
+    color: #36CBD4;
+  }
+  .nav-pills > li.active > a {
+    color: #fff;
+    cursor: default;
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 2px #ccc;
+  
+  }
+  .nav-pills > li.active > a:hover {
+        background-color: #fff;
+      color: #36CBD4;
+      cursor: pointer;
+  }
+  @media(max-width: 700px)
+  {
+    .nav-pills > li > a {
+        margin-right: 2px;
+        line-height: 1.42857143;
+        border: 1 solid #fff;
+        border-radius: 10px;
+        text-transform:uppercase;
+        font-weight:600;
+        color:#fff;
+        font-size:15px;
+        background-color: #36CBD4;
+      }
+      .nav-pills> li > a:hover {
+        font-size:20px;
+        background-color: #fff;
+        color: #36CBD4;
+      }
+      .nav-pills > li.active > a {
+        color: #fff;
+        cursor: default;
+        border: 2px solid #fff;
+        box-shadow: 0px 0px 2px #ccc;
+        background-color: #36CBD4;
+      
+      }
+      .nav-pills > li.active > a:hover {
+            background-color: #fff;
+          color: #36CBD4;
+          cursor: pointer;
+      }
+  }

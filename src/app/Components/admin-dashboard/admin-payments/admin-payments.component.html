@@ -1,0 +1,84 @@
+<div id="payment">
+    <div>
+        <div class="container p-2">
+
+            <div class="py-4 text-center top">
+                <h2 style="color: black;">Admin Payments</h2>
+
+            </div>
+
+        </div>
+        <div class="container p-3">
+            <div class="modal-body">
+                <table class="table table-striped table-bordered" style="color:black;">
+                    <thead>
+                        <tr>
+                            <th>Training Id</th>
+                            <th>Course</th>
+                            <th>Mentor Name</th>
+                            <th>Mentor Id</th>
+                            <th>Course Fees</th>
+                            <th>Commission</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let items of PaymentData">
+                            <td>{{items.trainingId}}</td>
+                            <td>{{items.skillName}}</td>
+                            <td>{{items.mentorName}}</td>
+                            <td>{{items.mentorId}}</td>
+                            <td>{{items.amount}}</td>
+                            <td>
+                                <div *ngIf="items.id==edit" style="width: 100%;">
+                                    <form [formGroup]="Commission" autocomplete="off" (submit)="onSubmit(Commission)">
+                                        <input type = "text" class="form-control" [(ngModel)]="items.commision" formControlName="com">
+                                    </form>
+                                </div>
+                                <div *ngIf="items.id!=edit">
+                                    {{items.commision}}
+                                </div>
+                            </td>
+                            <td>
+                                <div *ngIf="items.id != edit">
+                                    <button class=" btn btn-primary btn-block " (click)="editOption(items.id)">Edit</button>
+                                </div>
+                                <div *ngIf="items.id == edit">
+                                    <button class=" btn btn-primary btn-block " (click)="commissionEdit(items.id)">Save</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div id="id01" class="modal">
+        <div class="container-fluid modal-content animate">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 style="padding: 20px;text-align: center;padding-bottom: 50px;">Commission</h3>
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <form [formGroup]="Commission" autocomplete="off" (submit)="onSubmit(Commission)">
+                        <div class="form-group required">
+                            <label>Your Commission</label>
+                            <input class="form-control" formControlName="Commission">
+                            <small class="text-danger" *ngIf="Commission.get('Commission').touched && Commission.get('Commission').errors?.required">This field is mandatory</small>
+                        </div>
+                        <div class="form-group required">
+                            <label>Mentor Payment</label>
+                            <input class="form-control" formControlName="MentorPayment">
+                            <small class="text-danger" *ngIf="Commission.get('MentorPayment').touched && Commission.get('MentorPayment').errors?.required">This field is mandatory</small>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12 ">
+                                <button class="btn btn-lg btn-block login" [disabled]="!Commission.valid">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> -->
